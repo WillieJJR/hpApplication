@@ -34,6 +34,7 @@ pd.set_option('display.max_rows', None)
 #os.chdir('C:/Users/Willie/PycharmProjects/hpApplication')
 #os.chdir('C:/Users/Willie/PycharmProjects/HarryPotterApp')
 
+'''
 # current directory csv files
 csvs = [x for x in os.listdir('.') if x.endswith('.csv')]
 
@@ -58,6 +59,19 @@ movies_df=movies_df.rename(columns = {'ï»¿Movie ID':'Movie ID'})
 
 places_df = dfs['Places']
 spells_df = dfs['Spells']
+'''
+
+chapter_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Chapters.csv', encoding = "ISO-8859-1", engine='python')
+characters_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Characters.csv', encoding = "ISO-8859-1", engine='python')
+dialogue_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Dialogue.csv', encoding = "ISO-8859-1", engine='python')
+
+movies_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Movies.csv', encoding = "ISO-8859-1", engine='python')
+movies_df=movies_df.rename(columns = {'ï»¿Movie ID':'Movie ID'})
+
+places_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Places.csv', encoding = "ISO-8859-1", engine='python')
+spells_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Spells.csv', encoding = "ISO-8859-1", engine='python')
+
+
 
 character_dialogue_df = characters_df.merge(dialogue_df, on='Character ID', how='left')
 character_dialogue_places_df = character_dialogue_df.merge(places_df, on='Place ID', how='left')
@@ -308,7 +322,7 @@ def update_output_div_message(input_value):
                                })
     return output
 
-
+'''
 @app.callback(
     Output(component_id='message2-output', component_property='children'),
     Input(component_id='character-dd', component_property='value')
@@ -321,7 +335,7 @@ def update_output_div_message2(input_value):
         output = html.P(children=[html.Strong("Check out " + input_value + "'s Attributes!")],
                         style={'color': 'white'})
     return output
-
+'''
 
 # Character Species
 @app.callback(
