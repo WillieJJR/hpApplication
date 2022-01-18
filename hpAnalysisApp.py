@@ -630,6 +630,6 @@ def update_text_bar_chart(input_value):
 
 '''Initiate Application'''
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
     #port = int(os.environ.get('PORT', 5000))
     #app_server.run(host='0.0.0.0', port=port)
