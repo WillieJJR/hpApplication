@@ -61,15 +61,15 @@ places_df = dfs['Places']
 spells_df = dfs['Spells']
 '''
 
-chapter_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Chapters.csv', encoding = "ISO-8859-1", engine='python')
-characters_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Characters.csv', encoding = "ISO-8859-1", engine='python')
-dialogue_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Dialogue.csv', encoding = "ISO-8859-1", engine='python')
+chapter_df = pd.read_csv('Chapters.csv', encoding = "ISO-8859-1", engine='python')
+characters_df = pd.read_csv('Characters.csv', encoding = "ISO-8859-1", engine='python')
+dialogue_df = pd.read_csv('Dialogue.csv', encoding = "ISO-8859-1", engine='python')
 
-movies_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Movies.csv', encoding = "ISO-8859-1", engine='python')
+movies_df = pd.read_csv('Movies.csv', encoding = "ISO-8859-1", engine='python')
 movies_df=movies_df.rename(columns = {'ï»¿Movie ID':'Movie ID'})
 
-places_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Places.csv', encoding = "ISO-8859-1", engine='python')
-spells_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpApplication/Spells.csv', encoding = "ISO-8859-1", engine='python')
+places_df = pd.read_csv('Places.csv', encoding = "ISO-8859-1", engine='python')
+spells_df = pd.read_csv('Spells.csv', encoding = "ISO-8859-1", engine='python')
 
 
 
