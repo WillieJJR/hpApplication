@@ -100,6 +100,11 @@ hp_df['Dialogue'] = hp_df['Dialogue'].str.replace('place_holder_f!','Fine!')
 
 hp_df_final = hp_df.merge(spells_df, on='Incantation', how='left')
 
+hp_df_final = hp_df_final.loc[(hp_df_final['Gender'] == 'Male') | (hp_df_final['Gender'] == 'Female')]
+
+#hp_df_final['Gender'] = hp_df_final['Gender'].astype('str')
+#hp_df_final = hp_df_final['Gender'].apply(lambda x: len(x) > 2)
+
 #need to download nltk for tokenizer
 nltk.download('omw-1.4')
 nltk.download('punkt')
@@ -633,5 +638,3 @@ def update_text_bar_chart(input_value):
 '''Initiate Application'''
 if __name__ == '__main__':
     app.run_server()
-    #port = int(os.environ.get('PORT', 5000))
-    #app_server.run(host='0.0.0.0', port=port)
