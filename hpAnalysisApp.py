@@ -14,14 +14,14 @@ import difflib
 import dash_core_components as dcc
 import dash
 #from dash import dcc
-import dash_html_components as html
-#from dash import html
+#import dash_html_components as html
+from dash import html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 from collections import Counter
 #import dash_table
 import matplotlib.pyplot as plt
-from data_model import hp_df_final
+#from data_model import hp_df_final
 
 
 

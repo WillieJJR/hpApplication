@@ -1,3 +1,4 @@
+'''
 import pandas as pd
 import numpy as np
 import os
@@ -10,7 +11,7 @@ pd.set_option('display.max_rows', None)
 
 #movies_df = pd.read_csv('C:/Users/Willie/PycharmProjects/hpDashboard/Chapters.csv', encoding = "ISO-8859-1", engine='python')
 
-os.chdir('C:/Users/Willie/PycharmProjects/hpApplication')
+#os.chdir('C:/Users/Willie/PycharmProjects/hpApplication')
 #os.chdir('C:/Users/Willie/PycharmProjects/HarryPotterApp')
 
 # current directory csv files
@@ -67,3 +68,4 @@ hp_df_final = hp_df.merge(spells_df, on='Incantation', how='left')
 
 
 print(hp_df_final.head(5))
+'''
