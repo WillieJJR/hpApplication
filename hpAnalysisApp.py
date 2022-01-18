@@ -103,7 +103,7 @@ hp_df_final = hp_df.merge(spells_df, on='Incantation', how='left')
 #need to download nltk for tokenizer
 nltk.download('omw-1.4')
 nltk.download('punkt')
-nltk.download()
+nltk.download('stopwords')
 
 '''This is where application development begins using Dash framework'''
 
