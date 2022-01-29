@@ -25,6 +25,10 @@ I thoroughly enjoyed this project and I believe that this is an interesting tool
 
 The application can be found here: https://hptextapp.herokuapp.com/
 
+Example Picture below:
+
+![alt text] https://github.com/WillieJJR/hpApplication/blob/master/MA_Tonks_Image.png
+
 ### **Caveat**
 
 This is still a work-in-progress and more of an Initial Operational Capability (IOC) Product- there are just a couple of things that I would like to update and change when I am able to get some extra time:
