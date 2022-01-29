@@ -27,7 +27,7 @@ The application can be found here: https://hptextapp.herokuapp.com/
 
 Example Picture below:
 
-![alt text](https://github.com/WillieJJR/hpApplication/blob/master/Screenshot%202022-01-29%20160215.png)
+![alt text](https://github.com/WillieJJR/hpApplication/blob/master/Screenshot%202022-01-29%20160446.png)
 
 ### **Caveat**
 
