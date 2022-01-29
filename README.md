@@ -31,7 +31,7 @@ Example Picture below:
 
 ### **Caveat**
 
-This is still a work-in-progress and more of an Initial Operational Capability (IOC) Product- there are just a couple of things that I would like to update and change when I am able to get some extra time:
+This is still a work-in-progress and currently at the stage of an Initial Operational Capability (IOC) Product - there are just a couple of things that I would like to update and change when I am able to get some extra time:
 * Optimizing Python Scripts
 * Introducing a loading wheel
 
