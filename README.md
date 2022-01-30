@@ -33,7 +33,7 @@ Example Picture below:
 
 This is still a work-in-progress and currently at the stage of an Initial Operational Capability (IOC) Product - there are just a couple of things that I would like to update and change when I am able to get some extra time:
 * Optimizing Python Scripts
-* ~~Introducing a loading wheel ~~
+* ~~Introducing a loading wheel
 
 
 
