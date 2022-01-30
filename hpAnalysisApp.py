@@ -111,7 +111,9 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 '''This is where application development begins using Dash framework'''
-
+###testing
+#loading_style = {'position': 'absolute', 'align-self': 'center'}
+###testing
 #define application
 #app = dash.Dash(__name__)
 app = dash.Dash(external_stylesheets=[dbc.themes.SPACELAB])
@@ -272,7 +274,10 @@ app.layout = dbc.Container([
                 dbc.CardHeader("How Many Lines?"),
                 dbc.CardBody([
                     html.Div(id="lgraph-container", children=[
-                        dcc.Graph(id='line-chart', figure={})
+                        dcc.Loading(id="loading-2",
+                                    children=[dcc.Graph(id='line-chart', figure={})],
+                                    type="circle")
+                        #dcc.Graph(id='line-chart', figure={})
                     ]),
                 ], style={
                     'backgroundColor': 'rgba(0,0,0,0)',
@@ -292,7 +297,12 @@ app.layout = dbc.Container([
                 dbc.CardHeader("Who's on your Mind?"),
                 dbc.CardBody([
                     html.Div(id="graph-container", children=[
-                        dcc.Graph(id='bar-chart', figure={})
+                        ###testing
+                        dcc.Loading(id="loading-1",
+                                    children=[dcc.Graph(id='bar-chart', figure={})],
+                                    type="circle")
+                        ###testing
+                        #dcc.Graph(id='bar-chart', figure={})
                     ]),
                 ], style={
                     'backgroundColor': 'rgba(0,0,0,0)',
@@ -515,22 +525,12 @@ def line_chart_update(input_value):
 
     else:
         figure_line = go.Figure()
-        figure_line.update_layout(
-            xaxis={"visible": False},
-            yaxis={"visible": False},
-            font_color="lightblue",
-            annotations=[
-                {
-                    "text": "Please select a Character from the filter above to display!",
-                    "xref": "paper",
-                    "yref": "paper",
-                    "showarrow": False,
-                    "font": {
-                        "size": 28
-                    }
-                }
-            ]
+        figure_line.update_layout({
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)'}
         )
+        figure_line.update_xaxes(showgrid=False)
+        figure_line.update_yaxes(showgrid=False)
 
     return figure_line
 
@@ -552,6 +552,7 @@ def hide_graph(input_value):
 )
 def update_text_bar_chart(input_value):
     if input_value is not None:
+        #new_loading_style = loading_style
         string_hp = hp_df_final['Character Name'].unique().tolist()
         hp_df_char = hp_df_final[hp_df_final['Character Name'] == input_value]['Dialogue'].tolist()
         sentence = " ".join(hp_df_char)
@@ -613,25 +614,32 @@ def update_text_bar_chart(input_value):
 
 
     else:
-        figure = go.Figure()
-        figure.update_layout(
-            xaxis={"visible": False},
-            yaxis={"visible": False},
-            font_color="lightblue",
-            annotations=[
-                {
-                    "text": "Please select a Character from the filter above to display!",
-                    "xref": "paper",
-                    "yref": "paper",
-                    "showarrow": False,
-                    "font": {
-                        "size": 28
-                    }
-                }
-            ]
-        )
 
-    return figure
+        figure = go.Figure()
+        figure.update_layout({
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)'}
+        )
+        figure.update_xaxes(showgrid=False)
+        figure.update_yaxes(showgrid=False)
+        #figure.update_layout(
+            #axis={"visible": False},
+            #yaxis={"visible": False})
+            #font_color="lightblue",
+            #annotations=[
+             #   {
+              #      "text": "Please select a Character from the filter above to display!",
+               #     "xref": "paper",
+                #    "yref": "paper",
+                 #   "showarrow": False,
+                  #  "font": {
+                   #     "size": 28
+                    #}
+                #}
+            #]
+        #)
+
+    return figure #, new_loading_style
 
 
 
