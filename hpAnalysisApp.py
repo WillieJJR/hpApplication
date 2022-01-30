@@ -102,8 +102,6 @@ hp_df_final = hp_df.merge(spells_df, on='Incantation', how='left')
 
 hp_df_final = hp_df_final.loc[(hp_df_final['Gender'] == 'Male') | (hp_df_final['Gender'] == 'Female')]
 
-#hp_df_final['Gender'] = hp_df_final['Gender'].astype('str')
-#hp_df_final = hp_df_final['Gender'].apply(lambda x: len(x) > 2)
 
 #need to download nltk for tokenizer
 nltk.download('omw-1.4')
@@ -111,9 +109,6 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 '''This is where application development begins using Dash framework'''
-###testing
-#loading_style = {'position': 'absolute', 'align-self': 'center'}
-###testing
 #define application
 #app = dash.Dash(__name__)
 app = dash.Dash(external_stylesheets=[dbc.themes.SPACELAB])
@@ -297,11 +292,9 @@ app.layout = dbc.Container([
                 dbc.CardHeader("Who's on your Mind?"),
                 dbc.CardBody([
                     html.Div(id="graph-container", children=[
-                        ###testing
                         dcc.Loading(id="loading-1",
                                     children=[dcc.Graph(id='bar-chart', figure={})],
                                     type="circle")
-                        ###testing
                         #dcc.Graph(id='bar-chart', figure={})
                     ]),
                 ], style={
@@ -339,20 +332,6 @@ def update_output_div_message(input_value):
                                })
     return output
 
-'''
-@app.callback(
-    Output(component_id='message2-output', component_property='children'),
-    Input(component_id='character-dd', component_property='value')
-)
-def update_output_div_message2(input_value):
-    if input_value is None:
-        output = html.P(children=[html.Strong('Please select a character to see their Character Attributes!')],
-                        style={'color': 'white'})
-    else:
-        output = html.P(children=[html.Strong("Check out " + input_value + "'s Attributes!")],
-                        style={'color': 'white'})
-    return output
-'''
 
 # Character Species
 @app.callback(
@@ -500,9 +479,6 @@ def line_chart_update(input_value):
         grouped_df = grouped_df.set_index("idx")
         grouped_df = grouped_df.sort_index()
 
-        # grouped_df = grouped_df.set_index(keys = movie_order, inplace= True)
-        # grouped_df.sort_values(ascending=False, by= 'Dialogue ID')
-        # grouped_df = grouped_df.sort_index()
 
         figure_line = px.line(grouped_df, x="Movie Title", y="Dialogue ID",
                               title='Line Graph', color_discrete_sequence=['lightblue'])
@@ -552,7 +528,6 @@ def hide_graph(input_value):
 )
 def update_text_bar_chart(input_value):
     if input_value is not None:
-        #new_loading_style = loading_style
         string_hp = hp_df_final['Character Name'].unique().tolist()
         hp_df_char = hp_df_final[hp_df_final['Character Name'] == input_value]['Dialogue'].tolist()
         sentence = " ".join(hp_df_char)
@@ -622,22 +597,6 @@ def update_text_bar_chart(input_value):
         )
         figure.update_xaxes(showgrid=False)
         figure.update_yaxes(showgrid=False)
-        #figure.update_layout(
-            #axis={"visible": False},
-            #yaxis={"visible": False})
-            #font_color="lightblue",
-            #annotations=[
-             #   {
-              #      "text": "Please select a Character from the filter above to display!",
-               #     "xref": "paper",
-                #    "yref": "paper",
-                 #   "showarrow": False,
-                  #  "font": {
-                   #     "size": 28
-                    #}
-                #}
-            #]
-        #)
 
     return figure #, new_loading_style
 
